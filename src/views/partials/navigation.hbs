@@ -9,15 +9,16 @@
         <li class="nav-item">
           <a class="nav-link active text-light" aria-current="page" href="/">Inicio</a>
         </li>
-         <li class="nav-item">
-          <a class="nav-link active text-light" aria-current="page" href="/clients/list">CLientes</a>
+        <li class="nav-item">
+          <a class="nav-link active text-light" aria-current="page" href="/clients/list">Clientes</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link text-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Ventas
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/sales/list">Listar</a></li>
+            <li><a class="dropdown-item" href="/sales/cash">Caja</a></li>
+            <li><a class="dropdown-item" href="/sales/customer">Cliente</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -25,21 +26,23 @@
             Compras
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/shopping/list">Listar</a></li>
+            <li><a class="dropdown-item" href="/shopping/supplier">Proveedor</a></li>
+            <li><a class="dropdown-item" href="/shopping/order">Orden Compra</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link text-light dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Almacen
+          <a class="nav-link text-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Almacén
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/inventory/list">Listar</a></li>
+            <li><a class="dropdown-item" href="/inventory/product">Producto</a></li>
+            <li><a class="dropdown-item" href="/inventory/category">Categoría</a></li>
           </ul>
         </li>
       </ul>
       <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-success text-light" type="submit">Busqueda</button>
+        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+        <button class="btn btn-success text-light" type="submit">Búsqueda</button>
       </form>
     </div>
   </div>
