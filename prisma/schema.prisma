@@ -1,0 +1,56 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+model Role {
+  id Int @id @default(autoincrement())
+  name String @unique  
+}
+model Category {
+  id Int @id @default(autoincrement())
+  name String @unique 
+  products Product[] 
+}
+model User {
+  id Int @id @default(autoincrement())
+  username String @unique
+  password String 
+  isActive Boolean @default(true)
+  clients Client[]
+  products Product[]
+  ventas Venta[]
+}
+model Client {
+  id Int @id @default(autoincrement())
+  name String @unique
+  User User @relation(fields: [UserId],references: [id])
+  UserId Int
+  ventas Venta[]
+}
+model Product {
+  id Int @id @default(autoincrement())
+  name String @unique
+  description String
+  image String 
+  User User @relation(fields: [UserId],references: [id])
+  UserId Int
+  Category Category @relation(fields: [CategoryId],references: [id])
+  CategoryId Int
+  previousPrice Decimal?
+  price Decimal
+  ventas Venta[]
+}
+model Venta {
+  id Int @id @default(autoincrement())
+  User User @relation(fields: [UserId],references: [id])
+  UserId Int
+  Product Product @relation(fields: [ProductId],references: [id])
+  ProductId Int
+  Client Client @relation(fields: [ClientId],references: [id])
+  ClientId Int
+  createAt DateTime @default(now())
+}
